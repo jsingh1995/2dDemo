@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.aharrisbooks.net/h5qr/part9/basicCanvas.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(12.5, 30, 175, 70);
+
+            // Draw triangle
+            ctx.fillStyle = "#A2322E";
+            ctx.beginPath();
+            ctx.moveTo(12.5, 30);
+            ctx.lineTo(185, 30);
+            ctx.lineTo(99, 0);
+            ctx.closePath();
+            ctx.fill();
+
+            //windows
+            ctx.fillStyle = "#663300";
+            ctx.fillRect(25, 40, 35, 50);
+            ctx.fillStyle = "#0000FF";
+            ctx.fillRect(27, 42, 13, 23);
+            ctx.fillRect(43, 42, 13, 23);
+            ctx.fillRect(43, 67, 13, 21);
+            ctx.fillRect(27, 67, 13, 21);
+
+            //door
+            ctx.fillStyle = "#754719";
+            ctx.fillRect(80, 53, 30, 80);
+
+            //door knob
+            ctx.beginPath();
+            ctx.fillStyle = "#F2F2F2";
+            ctx.arc(105, 75, 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+
+            //Text on the Right
+            ctx.font = "20px Veranda";
+            ctx.fillText("Hello", 130, 60);
+            ctx.font = "10px Veranda";
+            ctx.fillText("Made In", 130, 75);
+            ctx.fillText("Canvas", 130, 85);
+        };
+    </script>
+
+    <h1><img id="image" src="https://i.ibb.co/XSX7x8D/Screen-Shot-2021-10-01-at-6-41-05-PM.png" alt="jasforjas logo" width="250" height="200"></h1>
+
+    <p>Zoom into the house:</p>
+
+
+    <button onclick="gfg()">Click to Zoom In</button>
+    </p>
+
+    <script>
+        function gfg() {
+            var g = document.getElementById("gfg");
+            var jas = g.getContext("2d");
+            var img = document.getElementById("image");
+            jas.drawImage(img, 0, 0);
+        }
+    </script>
+</head>
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid"></canvas>
+<canvas id="gfg" width="800" height="800" style="border:1px solid #d3d3d3; "> 
+</canvas>
+
+<h1>Jaspreet Singh</h1>
+<h1>House made on Canvas </h1>
+
+</body>
+
+</html>
